@@ -151,7 +151,7 @@ app.get("/webhook", (req, res) => {
     if (mode === "subscribe" && token === verify_token) {
       // Respond with 200 OK and challenge token from the request
       console.log("WEBHOOK_VERIFIED");
-      res.sendStatus(200).send(challenge);
+      res.send(challenge);
     } else {
       // Responds with '403 Forbidden' if verify tokens do not match
       res.sendStatus(403);
